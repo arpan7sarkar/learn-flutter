@@ -26,3 +26,10 @@ two properties, appBar (a
 navigation bar for the app)
 and body (what inside the
 application).
+
+GestureDectector is a
+Flutter widget that detects
+gestures (user inputs such as
+taps, drags, swipes, etc.) and
+triggers corresponding
+callbacks to handle them.
