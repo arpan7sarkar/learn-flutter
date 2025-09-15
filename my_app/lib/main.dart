@@ -45,7 +45,19 @@ class UserButton extends StatelessWidget {
       onTap: () {
         print("THe button is being tappped");
       },
-      child: Text('Tap here', style: TextStyle(fontSize: 20, backgroundColor: Colors.yellow, )),
+      child: Container(
+        height: 40,
+        padding: EdgeInsets.all(8.0),
+        margin: EdgeInsets.symmetric(horizontal: 8.0),
+
+        decoration: BoxDecoration(
+          borderRadius:BorderRadius.circular(5),
+          color: Colors.greenAccent,
+
+        ),
+        child: Text("Click me"),
+
+      ),
     );
   }
 }
