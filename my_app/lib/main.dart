@@ -3,41 +3,36 @@ import 'package:flutter/material.dart';
 const learner = 'Arpan';
 
 void main() {
-  runApp(MaterialApp(home: Myapp()));
+  runApp(MaterialApp(home: CounterApp()));
 }
 
-class Myapp extends StatefulWidget {
-  const Myapp({super.key});
+class CounterApp extends StatefulWidget {
+  const CounterApp({super.key});
 
   @override
-  State<Myapp> createState() => _MyappState();
+  State<CounterApp> createState() => _CounterappState();
 }
 
-class _MyappState extends State<Myapp> {
-  bool isButtonPressed = false;
-
-  void _onTap() {
-    setState(() {
-      isButtonPressed  = !isButtonPressed ;
-    });
-  }
-
-  Color getBackgroundColor() {
-    return isButtonPressed
-        ? const Color.fromARGB(255, 0, 0, 0)
-        : Colors.pinkAccent;
-  }
-
+class _CounterappState extends State<CounterApp> {
+  int count = 0;
   @override
   Widget build(BuildContext context) {
+    void _onPressed() {
+      setState(() {
+        count++;
+      });
+    }
     return Scaffold(
-      body: GestureDetector(
-        onTap: _onTap,
-        child: Container(
-          color: getBackgroundColor(),
+      appBar: AppBar(title: Text("Counter from Scratch")),
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextButton(onPressed: _onPressed, child: Text('Increment')),
+            Text('$count'),
+          ],
         ),
       ),
     );
   }
 }
-
